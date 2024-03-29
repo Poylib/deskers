@@ -1,7 +1,7 @@
 export default function Content() {
   return (
     <>
-      <p>http://localhost:3000/contents/desk/1</p>
+      <h1>content</h1>
       <br />
       <p>/contents/category/:id</p>
     </>
