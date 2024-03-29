@@ -6,7 +6,7 @@ export default function NavBar() {
   return (
     <div className={styles.container}>
       <button>
-        <span>OnTheDesk</span>
+        <span>Deskers</span>
       </button>
       <div className={styles.category}>
         {NAV_CATEGORY.map((el, idx) => (
