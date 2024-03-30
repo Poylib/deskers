@@ -1,3 +1,8 @@
+---
+title: 'MarkDown Sample Page'
+date: '2020-01-02'
+---
+
 <!--rehype:ignore:start-->
 <p align="center">
   <a href="https://uiwjs.github.io/npm-unpkg/#/pkg/@uiw/react-md-editor/file/README.md">
