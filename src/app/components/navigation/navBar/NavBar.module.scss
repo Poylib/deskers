@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 2px solid black;
+  span {
+    font-size: 22px;
+  }
+
+  .category {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    a {
+      margin-right: 3rem;
+      &:last-of-type {
+        margin-right: 0;
+      }
+
+      span {
+        font-size: large;
+      }
+    }
+  }
+}
