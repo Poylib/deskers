@@ -1,0 +1,37 @@
+.main {
+  display: flex;
+  justify-content: center;
+  // flex: 1;
+  @media screen and (max-width: 780px) {
+    .container {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      justify-content: center;
+      .category {
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+        padding: 0 16px;
+        height: 42px;
+
+        span {
+          font-size: 1.2rem;
+        }
+      }
+
+      .card {
+        display: flex;
+        margin: 10px 16px;
+        padding: 8px;
+        border: 1px solid black;
+
+        .thumbnail {
+          height: 140px;
+          width: 40%;
+          background-color: #eee;
+        }
+      }
+    }
+  }
+}
