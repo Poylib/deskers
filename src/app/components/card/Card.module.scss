@@ -1,0 +1,40 @@
+.container {
+  .card {
+    display: flex;
+    padding: 8px;
+    border: 1px solid black;
+
+    .thumbnail {
+      height: 140px;
+      width: 30%;
+      background-color: #eee;
+    }
+
+    .content {
+      margin-left: 8px;
+      padding: 16px 0;
+      h3 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        margin-top: 10px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 780px) {
+    flex-direction: column;
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      margin: 10px 16px;
+
+      .thumbnail {
+        width: 100%;
+        height: 220px;
+      }
+    }
+  }
+}
