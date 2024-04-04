@@ -1,5 +1,5 @@
 import { BlogPosting, WithContext } from 'schema-dts';
-
+import styles from './page.module.scss';
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -20,10 +20,10 @@ export default function RootLayout({
   };
   return (
     <>
-      <section>
+      <article className={styles.article}>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         {children}
-      </section>
+      </article>
     </>
   );
 }

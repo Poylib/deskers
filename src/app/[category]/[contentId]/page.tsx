@@ -1,9 +1,11 @@
-export default function Content() {
+import Content from './components/Content';
+
+import styles from './page.module.scss';
+
+export default function ContentPage() {
   return (
-    <>
-      <h1>content</h1>
-      <br />
-      <p>/contents/category/:id</p>
-    </>
+    <div className={styles.container}>
+      <Content />
+    </div>
   );
 }
