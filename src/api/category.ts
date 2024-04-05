@@ -12,19 +12,19 @@ export enum eCategory {
   PPT,
 }
 export const categoryDict = {
-  [eCategory.DESKTERIA]: { name: '데스크테리아', uri: 'deskteria' },
-  [eCategory.HOME_APPLIANCE]: { name: '가전', uri: 'home-appliance' },
-  [eCategory.KEYBOARD]: { name: '키보드', uri: 'keyboard' },
-  [eCategory.MONITOR]: { name: '모니터', uri: 'monitor' },
-  [eCategory.MOUSE]: { name: '마우스', uri: 'mouse' },
+  [eCategory.DESKTERIA]: { name: '데스크테리아', uri: 'deskteria', depth: 0 },
+  [eCategory.HOME_APPLIANCE]: { name: '가전', uri: 'home-appliance', depth: 1 },
+  [eCategory.KEYBOARD]: { name: '키보드', uri: 'keyboard', depth: 2 },
+  [eCategory.MONITOR]: { name: '모니터', uri: 'monitor', depth: 2 },
+  [eCategory.MOUSE]: { name: '마우스', uri: 'mouse', depth: 2 },
 
-  [eCategory.LIFE_HEALTH]: { name: '생활/건강', uri: 'life-health' },
-  [eCategory.SNACK]: { name: '간식', uri: 'snack' },
-  [eCategory.STRESS]: { name: '스트레스', uri: 'stress' },
+  [eCategory.LIFE_HEALTH]: { name: '생활/건강', uri: 'life-health', depth: 0 },
+  [eCategory.SNACK]: { name: '간식', uri: 'snack', depth: 1 },
+  [eCategory.STRESS]: { name: '스트레스', uri: 'stress', depth: 1 },
 
-  [eCategory.OFFICE]: { name: '오피스', uri: 'office' },
-  [eCategory.IT_TREND]: { name: 'IT 트렌드', uri: 'it-trend' },
-  [eCategory.PPT]: { name: 'PPT', uri: 'ppt' },
+  [eCategory.OFFICE]: { name: '오피스', uri: 'office', depth: 0 },
+  [eCategory.IT_TREND]: { name: 'IT 트렌드', uri: 'it-trend', depth: 1 },
+  [eCategory.PPT]: { name: 'PPT', uri: 'ppt', depth: 1 },
 };
 
 export const categoryHierarchy = {
@@ -37,6 +37,6 @@ export const categoryHierarchy = {
 export const getCategoryList = () => {
   return {
     hierarchy: categoryHierarchy,
-    categoryDic: categoryDict,
+    categoryDict: categoryDict,
   };
 };
