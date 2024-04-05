@@ -34,14 +34,9 @@ const test_category = async (props: Props) => {
                     })}
                 </ul>
             </nav>
-            <div className={"markdown-body"} >
-                <div className={"markdown-body"} >
-                    <div
-                        className={"text-gray-600"}
-                        dangerouslySetInnerHTML={{ __html: contentData.contentHtml }}
-                    />
-                </div>
-            </div>
+            <h1>{contentData.title}</h1>
+            <div>{contentData.date}</div>
+            <div className={"markdown-body"} dangerouslySetInnerHTML={{ __html: contentData.contentHtml }} />
         </>
     );
 };
