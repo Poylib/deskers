@@ -1,4 +1,3 @@
-import getConfig from 'next/config';
 import path from 'path';
 import fs from 'fs';
 import matter from 'gray-matter';
@@ -15,7 +14,7 @@ interface ContentDictType {
 }
 
 const contentDict: { [key: number]: ContentDictType } = {
-  1: { category: eCategory.KEYBOARD, fileName: '1_sample.md', title: '', date: new Date('2024-04-04'), content: '' },
+  1: { category: eCategory.KEYBOARD, fileName: '1_sample.md', title: 'test md', date: new Date('2024-04-04'), content: '테스트 컨텐츠 내용' },
 };
 
 export const getContentList = (idCategory: eCategory) => {

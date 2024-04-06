@@ -2,17 +2,8 @@
   display: flex;
   justify-content: center;
   flex-direction: row;
-  padding: 0 24px;
-
-  .sideBar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 30%;
-    @media screen and (max-width: 780px) {
-      display: none;
-    }
-  }
+  padding: 24px;
+  height: 100vh;
 
   .container {
     display: flex;

@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+
+  .category {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    padding: 0 16px;
+    height: 42px;
+
+    span {
+      font-size: 1.2rem;
+    }
+  }
+}
