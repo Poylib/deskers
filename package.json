@@ -9,6 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.0",
+    "@google-cloud/translate": "^8.1.0",
+    "@mui/material": "^5.15.13",
+    "@mui/x-tree-view": "^6.17.0",
     "@tanstack/react-query": "^5.28.6",
     "@tanstack/react-query-devtools": "^5.28.6",
     "axios": "^1.6.8",
