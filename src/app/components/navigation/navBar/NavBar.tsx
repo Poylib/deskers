@@ -1,13 +1,8 @@
 import Link from 'next/link';
-import { getCategoryList } from '@/api/category';
 
 import styles from './NavBar.module.scss';
 
 export default async function NavBar() {
-  const categoryList = getCategoryList();
-
-  const depth0Elements = Object.values(categoryList.categoryDict).filter((item) => item.depth === 0);
-
   return (
     <div className={styles.container}>
       <Link href={'/'}>
@@ -17,7 +12,20 @@ export default async function NavBar() {
         <Link href={`/about`}>
           <span>ABOUT</span>
         </Link>
-        {depth0Elements.map((el, idx) => (
+        {[
+          {
+            name: '데스크테리어',
+            uri: 'desk',
+          },
+          {
+            name: '생활/건강',
+            uri: 'life',
+          },
+          {
+            name: '오피스',
+            uri: 'office',
+          },
+        ].map((el, idx) => (
           <Link key={`${idx}_${el.name}`} href={`/${el.uri}`}>
             <span>{el.name}</span>
           </Link>
