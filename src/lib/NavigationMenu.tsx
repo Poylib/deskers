@@ -36,8 +36,9 @@ export function NavigationMenu({ params }: { params: DirectoryItem[] }) {
 
 function renderTree(item: DirectoryItem): JSX.Element {
   if (item.type === 'file') {
+    const pathURI = removeFileExtension(item.id).replace("resources", "")
     return (
-      <Link href={`/${path.relative('resources', removeFileExtension(item.id))}?query=read`} key={''}>
+      <Link href={pathURI + "?query=read"} key={''}>
         <TreeItem nodeId={item.id} label={item.name} />
       </Link>
     );
