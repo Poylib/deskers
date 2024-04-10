@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+  .title {
+    display: flex;
+    margin-bottom: 32px;
+
+    h2 {
+      font-size: 28px;
+    }
+  }
+}

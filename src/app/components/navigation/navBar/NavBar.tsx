@@ -4,7 +4,7 @@ import styles from './NavBar.module.scss';
 
 export default async function NavBar() {
   return (
-    <div className={styles.container}>
+    <header className={styles.container}>
       <Link href={'/'}>
         <span>Deskers</span>
       </Link>
@@ -31,6 +31,6 @@ export default async function NavBar() {
           </Link>
         ))}
       </div>
-    </div>
+    </header>
   );
 }
