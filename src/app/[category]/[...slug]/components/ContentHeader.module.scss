@@ -1,5 +1,27 @@
 .container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 24px 24px;
   width: 100%;
+  height: 210px;
+  border-bottom: 1px solid #525252;
+
+  h1 {
+    font-size: 36px;
+  }
+
+  .categoryName {
+    width: 100%;
+  }
+
+  .date {
+    display: flex;
+    align-items: center;
+
+    span {
+      margin-left: 8px;
+    }
+  }
 }
