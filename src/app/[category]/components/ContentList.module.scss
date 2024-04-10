@@ -1,3 +1,5 @@
+@use '../../../styles/variables.scss' as vars;
+
 .container {
-  max-width: 900px;
+  max-width: vars.$contentMaxWidth;
 }

@@ -1,8 +1,7 @@
-import Image from 'next/image';
-import { ImageList, ImageListItem, ImageListItemBar } from '@mui/material';
-import styles from './ContentList.module.scss';
+import { ImageList } from '@mui/material';
+import Content from './Content';
 
-import test from '@@/images/test.jpg';
+import styles from './ContentList.module.scss';
 
 export default function ContentList() {
   const itemData = [
@@ -28,14 +27,12 @@ export default function ContentList() {
       content: '@hjrc33',
     },
   ];
+
   return (
     <section className={styles.container}>
-      <ImageList sx={{ height: '100%', gridTemplateColumns: `repeat(auto-fill, minmax(200px, 1fr)) !important`, cursor: 'pointer' }} gap={12}>
+      <ImageList sx={{ height: '100%', gridTemplateColumns: `repeat(auto-fill, minmax(200px, 1fr)) !important` }} gap={12}>
         {itemData.map((item, idx) => (
-          <ImageListItem key={idx}>
-            <Image src={test} alt={item.title} loading="eager" placeholder="blur" style={{ objectFit: 'cover', width: '100%', height: 300 }} />
-            <ImageListItemBar title={item.title} subtitle={<span>{item.content}</span>} position="below" />
-          </ImageListItem>
+          <Content key={`${idx}`} item={item} />
         ))}
       </ImageList>
     </section>
