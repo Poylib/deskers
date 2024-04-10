@@ -5,6 +5,8 @@ import { getContentData } from '../../../data/read-data';
 import Thumbnail from './\bcomponents/Thumbnail';
 import ContentHeader from './\bcomponents/ContentHeader';
 
+import styles from './page.module.scss';
+
 export default async function Page({ params, searchParams }: any) {
   const { slug } = params;
   console.log('🚀 ~ Page ~ slug:', slug);
@@ -12,9 +14,9 @@ export default async function Page({ params, searchParams }: any) {
   // const data = await createDirectoryItems(`resources/${category}`);
   // const data = await createDirectoryItems(`resources`);
   return (
-    <div>
+    <main className={styles.container}>
       <Thumbnail />
       <ContentHeader />
-    </div>
+    </main>
   );
 }
