@@ -1,3 +1,7 @@
 export default function Content() {
-  return <span>content</span>;
+  return (
+    <div style={{ padding: 24 }}>
+      <span>content</span>
+    </div>
+  );
 }
