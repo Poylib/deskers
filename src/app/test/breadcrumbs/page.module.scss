@@ -1,0 +1,13 @@
+ul.breadcrumbs{
+  display: flex;
+  .item + .item{
+    position: relative;
+    padding-left:30px;
+  }
+  .item + .item:before{
+    content: ">";
+    position: absolute;
+    top:0;
+    left:10px;
+  }
+}
