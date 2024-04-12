@@ -27,7 +27,26 @@ export interface Post extends PostMatter {
   readingMinutes: number;
 }
 
-const getPost = async (filepath: string): Promise<Post> => {
+export const getPostBySlug = async ({
+  group,
+  slug
+}: {
+  group: string
+  slug: string
+}): Promise<Post> => {
+  const filepath = path.join(POSTS_PATH, group, slug)
+  const mdx = matter(fs.readFileSync(filepath, 'utf8'));
+  const grayMatter = mdx.data as PostMatter & { category: string };
+  return {
+    ...grayMatter,
+    dateString: dayjs(grayMatter.date).locale('ko').format('YYYY년 MM월 DD일'),
+    content: mdx.content,
+    readingMinutes: Math.ceil(readingTime(mdx.content).minutes),
+    filepath: path.relative(process.cwd(), filepath),
+  };
+};
+
+export const getPost = async (filepath: string): Promise<Post> => {
   const mdx = matter(fs.readFileSync(filepath, 'utf8'));
   const grayMatter = mdx.data as PostMatter & { category: string };
   return {
@@ -61,6 +80,7 @@ export async function getCategories(group: Group): Promise<
   } = {};
   for (const post of sync(`${group.url}/**/*.mdx`)) {
     const { category, filepath } = await getPost(post);
+    // console.log(group.url)
     if (!result[category]) {
       result[category] = { url: `${group.url}?category=${category}`, count: 0 };
     }
