@@ -13,12 +13,17 @@ type Props = {
 };
 
 export default function Content({ item }: Props) {
-  console.log(item.filepath)
-
   return (
-    <Link href={`${item.filepath}`}>
+    <Link href={`${item.filepath.split('/').slice(1).join('/')}`}>
       <ImageListItem style={{ cursor: 'pointer' }} onClick={() => {}}>
-        <Image src={test} alt={item.title} loading="eager" placeholder="blur" style={{ objectFit: 'cover', width: '100%', height: 300 }} />
+        <Image
+          src={item.thumbnail}
+          alt={item.thumbnail}
+          loading="eager"
+          width={300}
+          height={300}
+          style={{ objectFit: 'cover', width: '100%', height: 300 }}
+        />
         <ImageListItemBar title={item.title} subtitle={<span>{item.content}</span>} position="below" />
       </ImageListItem>
     </Link>

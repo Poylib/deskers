@@ -7,8 +7,8 @@ export default async function HashChips({ categories }: { categories: Record<str
     <div className={styles.row}>
       {Object.entries(categories).map(([category, { url, count }], idx) => {
         return (
-          <Link key={idx} href={`/${url}`}>
-            #{category} &nbsp;
+          <Link key={idx} href={`${url.split('/')[1]}`}>
+            #{category} ({count}) &nbsp;
           </Link>
         );
       })}

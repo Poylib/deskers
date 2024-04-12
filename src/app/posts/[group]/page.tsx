@@ -13,7 +13,6 @@ export default async function Category({ params, searchParams }: any) {
       group: _group,
       category: searchParams.category,
     });
-    // console.log(`${_group}/${searchParams.category}`);
     return (
       <main className={styles.main}>
         <Title group={group} />
