@@ -253,7 +253,6 @@ const title2 = {
 function SubChildren({ close, execute, getState, textApi, dispatch }) {
   const [value, setValue] = useState('');
   const insert = () => {
-    console.log('value:::', value);
     textApi.replaceSelection(value);
   };
   return (
@@ -264,7 +263,6 @@ function SubChildren({ close, execute, getState, textApi, dispatch }) {
         type="button"
         onClick={() => {
           dispatch({ $value: '~~~~~~' });
-          console.log('> execute: >>>>>', getState());
         }}
       >
         State
@@ -693,7 +691,7 @@ const textToImage: ICommand = {
 
 export default function App() {
   const [value, setValue] = useState('**Hello world!!!**');
-  console.log('value::', value);
+  // console.log('value::', value);
   return (
     <div className="container">
       <MDEditor className="gooooooooo" onChange={(newValue = '') => setValue(newValue)} value={value} commands={[textToImage, commands.divider]} />
