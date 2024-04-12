@@ -14,7 +14,7 @@ type Props = {
 
 export default function Content({ item }: Props) {
   return (
-    <Link href={`${item.filepath.split('/').slice(1).join('/')}`}>
+    <Link href={`${item?.filepath?.split('/').slice(1).join('/')}`}>
       <ImageListItem style={{ cursor: 'pointer' }} onClick={() => {}}>
         <Image
           src={item.thumbnail}

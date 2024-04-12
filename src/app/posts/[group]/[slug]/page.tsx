@@ -10,8 +10,8 @@ const Page = async ({ params }: any) => {
   return (
     <main className={styles.container}>
       <div style={{ maxWidth: 900, margin: 'auto', width: '100%' }}>
-        <ContentHeader post={post}/>
-        <Content />
+        <ContentHeader post={post} />
+        <Content post={post} />
       </div>
     </main>
   );

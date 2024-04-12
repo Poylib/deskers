@@ -12,7 +12,6 @@ export default function ContentHeader({ post }: { post: Post }) {
         <span>{post.dateString}</span>
       </div>
       <span>읽는 시간 {post.readingMinutes} 분</span>
-      {post.content}
     </div>
   );
 }
