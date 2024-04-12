@@ -23,7 +23,7 @@ export default function About() {
 
         <div style={{ display: 'flex', alignItems: 'center', width: '100%' }}>
           <a onClick={() => router.push('/')} style={{ fontSize: 20, color: 'blue' }}>
-            > 지금 당장 전문 직장 일잘러 꿀팁 구경하러 가기
+            &gt; 지금 당장 전문 직장 일잘러 꿀팁 구경하러 가기
           </a>
         </div>
       </section>
