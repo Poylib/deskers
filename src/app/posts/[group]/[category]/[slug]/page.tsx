@@ -1,12 +1,8 @@
 import 'github-markdown-css';
-import { NavigationMenu } from '../../../../../lib/NavigationMenu';
-import { createDirectoryItems } from '../../../../../data/get-list';
-import { getContentData } from '../../../../../data/read-data';
-import Thumbnail from './\bcomponents/Thumbnail';
-import ContentHeader from './\bcomponents/ContentHeader';
+import ContentHeader from './components/ContentHeader';
 
 import styles from './page.module.scss';
-import Content from './\bcomponents/Content';
+import Content from './components/Content';
 
 export default async function Page({ params, searchParams }: any) {
   return (
