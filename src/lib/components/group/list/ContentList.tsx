@@ -1,8 +1,8 @@
 import { ImageList } from '@mui/material';
-import Content from '../Content';
+import Content from '../hash-list/Content';
 
 import styles from './ContentList.module.scss';
-import { Post } from '../../../data/posts';
+import { Post } from '@/data/model/type';
 
 type Props = {
   posts: Post[];
