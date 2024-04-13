@@ -20,10 +20,13 @@ export default async function Category({ params, searchParams }: any) {
       </main>
     );
   }
+  const posts = await getPosts({
+    group: _group,
+  });
   return (
     <main className={styles.main}>
       <Title group={group} />
-      {/* <ContentList category={group} /> */}
+      <ContentList posts={posts} />
     </main>
   );
 }
