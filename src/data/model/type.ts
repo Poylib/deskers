@@ -4,6 +4,11 @@ export type Group = {
   count: number;
 };
 
+export type HashTag = {
+  count: number;
+  url: string;
+};
+
 export interface PostMatter {
   title: string;
   date: Date;
