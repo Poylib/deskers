@@ -1,6 +1,5 @@
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import 'github-markdown-css';
-import styles from './Content.module.scss';
 import { Post } from '@/data/posts';
 
 export default function Content({ post }: { post: Post }) {

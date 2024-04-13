@@ -57,7 +57,11 @@ export const getPosts = async ({ group, category }: { group?: string; category?:
     const posts = await Promise.all(getPaths(group).map((postPath) => getPost(postPath)));
     return posts.filter((p) => p.category === category);
   }
-  return Promise.all(getPaths(group).map((postPath) => getPost(postPath)))
+  return Promise.all(getPaths(group).map((postPath) => getPost(postPath)));
+};
+
+export const getAllPosts = async (): Promise<Post[]> => {
+  return Promise.all(getPaths().map((postPath) => getPost(postPath)));
 };
 
 export async function getCategories(group: Group): Promise<

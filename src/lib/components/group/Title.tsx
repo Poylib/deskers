@@ -1,5 +1,5 @@
-import { Group, getCategories } from '../../../../data/posts';
-import HashChips from './HashChips';
+import { Group, getCategories } from '../../../data/posts';
+import HashChips from '../HashChips';
 import styles from './Title.module.scss';
 
 type Props = {
