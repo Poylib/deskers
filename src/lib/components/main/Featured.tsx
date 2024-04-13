@@ -1,8 +1,8 @@
 import { ImageList } from '@mui/material';
 
 import styles from './Featured.module.scss';
-import { getAllPosts } from '../../../data/posts';
-import Content from '../../../lib/components/Content';
+import { getAllPosts } from '@/data/posts';
+import Content from '../group/hash-list/Content';
 
 export default async function Featured() {
   const posts = await getAllPosts();
