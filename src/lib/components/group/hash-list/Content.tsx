@@ -2,8 +2,8 @@
 import Image from 'next/image';
 import { ImageListItem, ImageListItemBar } from '@mui/material';
 import Link from 'next/link';
+import { Post } from '@/data/model/type';
 
-import { Post } from '../../data/posts';
 
 type Props = {
   item: Post;
@@ -11,7 +11,7 @@ type Props = {
 
 export default function Content({ item }: Props) {
   return (
-    <Link href={`${item?.filepath?.split('/').slice(1).join('/')}`}>
+    <Link href={`/${item?.filepath?.split('/').slice(1).join('/')}`}>
       <ImageListItem style={{ cursor: 'pointer' }} onClick={() => {}}>
         <Image
           src={item.thumbnail}

@@ -1,8 +1,8 @@
 import styles from './page.module.scss';
-import Content from '../../../../lib/components/detail/Content';
-import ContentHeader from '../../../../lib/components/detail/ContentHeader';
-import { getPostBySlug, getPosts } from '../../../../data/posts';
-import Thumbnail from '../../../../lib/components/detail/Thumbnail';
+import Content from '@/lib/components/detail/Content';
+import ContentHeader from '@/lib/components/detail/ContentHeader';
+import { getPostBySlug } from '@/data/posts';
+import Thumbnail from '@/lib/components/detail/Thumbnail';
 
 const Page = async ({ params }: any) => {
   const { group, slug } = params;

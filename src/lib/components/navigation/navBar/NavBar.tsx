@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 import styles from './NavBar.module.scss';
-import { getGroups } from '../../../../data/posts';
+import { getGroups } from '@/data/posts';
 
 export default async function NavBar() {
   const groups = getGroups();
@@ -15,7 +15,7 @@ export default async function NavBar() {
           <span>ABOUT</span>
         </Link>
         {groups.map((el, idx) => (
-          <Link key={`${idx}`} href={`/${el.url}`}>
+          <Link key={`${idx}`} href={`/${el.category}`}>
             <span>{el.displayName}</span>
           </Link>
         ))}
