@@ -1,21 +1,12 @@
-'use client';
-
-import { remark } from 'remark';
-import html from 'remark-html';
+import { MDXRemote } from 'next-mdx-remote/rsc';
+import 'github-markdown-css';
 import styles from './Content.module.scss';
-import { useEffect, useState } from 'react';
+import { Post } from '@/data/posts';
 
 export default function Content({ post }: { post: Post }) {
-  const [htmlContent, setHtmlContent] = useState<string>('');
-
-  useEffect(() => {
-    const fetchHtmlContent = async () => {
-      const result = await remark().use(html).process(post.content);
-      setHtmlContent(result.toString());
-    };
-
-    fetchHtmlContent();
-  }, [post.content]);
-
-  return <div dangerouslySetInnerHTML={{ __html: htmlContent }} />;
+  return (
+    <div className={'markdown-body'} style={{ paddingTop: 40, paddingBottom: 40 }}>
+      <MDXRemote source={post.content} />
+    </div>
+  );
 }

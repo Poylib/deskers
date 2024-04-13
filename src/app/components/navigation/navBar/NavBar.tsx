@@ -4,7 +4,7 @@ import styles from './NavBar.module.scss';
 import { getGroups } from '../../../../data/posts';
 
 export default async function NavBar() {
-  const groups = getGroups()
+  const groups = getGroups();
   return (
     <header className={styles.container}>
       <Link href={'/'}>

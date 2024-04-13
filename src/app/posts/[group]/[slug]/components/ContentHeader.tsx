@@ -1,6 +1,7 @@
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
-import styles from './ContentHeader.module.scss';
 import { Post } from '../../../../../data/posts';
+
+import styles from './ContentHeader.module.scss';
 
 export default function ContentHeader({ post }: { post: Post }) {
   return (
