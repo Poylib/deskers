@@ -3,10 +3,7 @@ import Image from 'next/image';
 import { ImageListItem, ImageListItemBar } from '@mui/material';
 import Link from 'next/link';
 
-import test from '@@/images/test.jpg';
-import { usePathname, useRouter } from 'next/navigation';
-import { Post, getLinkPath } from '../../../../data/posts';
-import path from 'path';
+import { Post } from '../../data/posts';
 
 type Props = {
   item: Post;
