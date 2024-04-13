@@ -4,14 +4,13 @@ import { ImageListItem, ImageListItemBar } from '@mui/material';
 import Link from 'next/link';
 import { Post } from '@/data/model/type';
 
-
 type Props = {
   item: Post;
 };
 
 export default function Content({ item }: Props) {
   return (
-    <Link href={`/${item?.filepath?.split('/').slice(1).join('/')}`}>
+    <Link href={`/${item?.uri}`}>
       <ImageListItem style={{ cursor: 'pointer' }} onClick={() => {}}>
         <Image
           src={item.thumbnail}
