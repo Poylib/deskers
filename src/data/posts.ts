@@ -27,14 +27,8 @@ export interface Post extends PostMatter {
   readingMinutes: number;
 }
 
-export const getPostBySlug = async ({
-  group,
-  slug
-}: {
-  group: string
-  slug: string
-}): Promise<Post> => {
-  const filepath = path.join(POSTS_PATH, group, slug)
+export const getPostBySlug = async ({ group, slug }: { group: string; slug: string }): Promise<Post> => {
+  const filepath = path.join(POSTS_PATH, group, slug);
   const mdx = matter(fs.readFileSync(filepath, 'utf8'));
   const grayMatter = mdx.data as PostMatter & { category: string };
   return {
@@ -58,9 +52,13 @@ export const getPost = async (filepath: string): Promise<Post> => {
   };
 };
 
-export const getPosts = async ({ group, category }: { group?: string; category?: string }): Promise<Post[]> => {
+export const getPosts = async ({ group, category }: { group?: string; category?: string } = {}): Promise<Post[]> => {
   const posts = await Promise.all(getPaths(group).map((postPath) => getPost(postPath)));
   return posts.filter((p) => p.category === category);
+};
+
+export const getAllPosts = async (): Promise<Post[]> => {
+  return Promise.all(getPaths().map((postPath) => getPost(postPath)));
 };
 
 export async function getCategories(group: Group): Promise<

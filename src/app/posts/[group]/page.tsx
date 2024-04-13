@@ -1,9 +1,9 @@
 import React from 'react';
-import Title from './components/Title';
-import ContentList from './components/ContentList';
 
 import styles from './page.module.scss';
 import { Group, getGroups, getPosts } from '../../../data/posts';
+import Title from '../../../lib/components/group/Title';
+import ContentList from '../../../lib/components/group/ContentList';
 
 export default async function Category({ params, searchParams }: any) {
   const { group: _group } = params;

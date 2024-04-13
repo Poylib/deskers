@@ -1,5 +1,5 @@
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
-import { Post } from '../../../../../data/posts';
+import { Post } from '../../../data/posts';
 
 import styles from './ContentHeader.module.scss';
 
