@@ -1,4 +1,5 @@
 export * from './get-categories'
+export * from './get-groups'
 export * from './get-link-path'
 export * from './get-post-by-slug'
 export * from './get-post'

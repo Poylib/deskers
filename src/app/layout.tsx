@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import '../styles/global.scss';
 import Providers from './Providers';
-import NavBar from '../lib/components/navigation/navBar';
+import { Header } from '@/lib/components/navigation/Header';
+import { getGroups } from '@/data/posts';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -20,10 +20,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const groups = getGroups()
+
   return (
     <html lang="ko">
       <body className={inter.className}>
-        <NavBar />
+        <Header groups={groups}/>
         <Providers>{children}</Providers>
       </body>
     </html>
