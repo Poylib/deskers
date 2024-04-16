@@ -141,14 +141,14 @@ const NavBar: React.FC<HeaderProps> = ({ groups, active, toggleNav }) => {
     <>
       <StyledRootDiv>
         <div className="container-small">
-          <a href="index.html" className="headA">
+          <a href="/" className="headA">
             Deskers
           </a>
           <button type="button" className="headC" onClick={toggleNav}>
             <FontAwesomeIcon icon={faBars} title="MENU" />
           </button>
         </div>
-        <StyledNavWrapper active={active ? 'active': undefined}>
+        <StyledNavWrapper active={active ? 'active' : undefined}>
           <nav className="headB">
             <ul>
               <li>
