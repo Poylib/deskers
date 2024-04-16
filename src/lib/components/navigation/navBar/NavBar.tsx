@@ -148,7 +148,7 @@ const NavBar: React.FC<HeaderProps> = ({ groups, active, toggleNav }) => {
             <FontAwesomeIcon icon={faBars} title="MENU" />
           </button>
         </div>
-        <StyledNavWrapper active={active}>
+        <StyledNavWrapper active={active ? 'active': undefined}>
           <nav className="headB">
             <ul>
               <li>
