@@ -160,7 +160,7 @@ const NavBar: React.FC<HeaderProps> = ({ groups, active, toggleNav }) => {
               {groups?.map((group, idx) => {
                 return (
                   <li key={idx}>
-                    <a href={group.category}>{group.displayName}</a>
+                    <a href={`/${group.category}`}>{group.displayName}</a>
                   </li>
                 );
               })}
