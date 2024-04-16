@@ -20,13 +20,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const groups = getGroups()
+  const groups = getGroups();
 
   return (
     <html lang="ko">
       <body className={inter.className}>
-        <Header groups={groups}/>
-        <Providers>{children}</Providers>
+        <Providers>
+          <Header groups={groups} />
+          {children}
+        </Providers>
       </body>
     </html>
   );
