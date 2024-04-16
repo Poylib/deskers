@@ -1,6 +1,5 @@
-import Featured from '../lib/components/main/Featured';
-import Tags from '../lib/components/main/Tags';
-import styles from './page.module.scss';
+import Featured from '@/lib/components/main/Featured';
+import Tags from '@/lib/components/main/Tags';
 
 export default function Home() {
   return (
