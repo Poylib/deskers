@@ -50,9 +50,6 @@ center,
 dl,
 dt,
 dd,
-ol,
-ul,
-li,
 fieldset,
 form,
 label,
@@ -108,10 +105,6 @@ section {
 }
 body {
   line-height: 1;
-}
-ol,
-ul {
-  list-style: none;
 }
 blockquote,
 q {
