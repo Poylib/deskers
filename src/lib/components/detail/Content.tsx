@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 const StyledRootDiv = styled.div`
   min-width: 320px;
-  padding: 0 24px;
+  padding: 0 24px 80px;
 
   letter-spacing: -0.004em;
   word-break: keep-all;

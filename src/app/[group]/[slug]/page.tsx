@@ -10,11 +10,9 @@ const Page = async ({ params }: any) => {
   const post = await getPostBySlug({ group, slug });
   return (
     <Container>
-      <div style={{ maxWidth: 900, margin: 'auto', width: '100%' }}>
-        <Thumbnail img={post.thumbnail} />
-        <ContentHeader post={post} />
-        <Content post={post} />
-      </div>
+      <Thumbnail img={post.thumbnail} />
+      <ContentHeader post={post} />
+      <Content post={post} />
     </Container>
   );
 };
