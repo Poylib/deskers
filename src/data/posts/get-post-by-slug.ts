@@ -5,6 +5,7 @@ import readingTime from 'reading-time';
 import dayjs from 'dayjs';
 import { Post, PostMatter } from '../model/type';
 import { POSTS_PATH, POST_EXT } from '@/config';
+import showdown from 'showdown';
 
 export const getPostBySlug = async ({ group, slug }: { group: string; slug: string }): Promise<Post> => {
   const filepath = path.join(POSTS_PATH, group, slug) + POST_EXT;
@@ -13,7 +14,7 @@ export const getPostBySlug = async ({ group, slug }: { group: string; slug: stri
   return {
     ...grayMatter,
     dateString: dayjs(grayMatter.date).locale('ko').format('YYYY년 MM월 DD일'),
-    content: mdx.content,
+    content: new showdown.Converter().makeHtml(mdx.content),
     readingMinutes: Math.ceil(readingTime(mdx.content).minutes),
     uri: path.relative(process.cwd(), filepath),
   };
