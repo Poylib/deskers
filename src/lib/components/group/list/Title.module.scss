@@ -8,7 +8,15 @@
     margin-bottom: 32px;
 
     h2 {
+      position: relative;
       font-size: 28px;
+
+      span {
+        position: absolute;
+        top: 0;
+        right: -20px;
+        font-size: 14px;
+      }
     }
   }
 }
