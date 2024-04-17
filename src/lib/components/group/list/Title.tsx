@@ -14,7 +14,8 @@ export default async function Title(params: Props) {
     <div className={styles.container}>
       <div className={styles.title}>
         <h2>
-          {group.displayName} ({group.count})
+          {group.displayName}
+          <span> ({group.count})</span>
         </h2>
       </div>
       <HashChips categories={categories} />
