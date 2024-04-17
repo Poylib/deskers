@@ -100,7 +100,7 @@ const StyledRootDiv = styled.div`
 const StyledNavWrapper = styled.div`
   .headB ul {
     margin: 0;
-    padding: 0;
+    padding: 10px;
     list-style: none;
   }
 
