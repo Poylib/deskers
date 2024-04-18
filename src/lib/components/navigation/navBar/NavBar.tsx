@@ -145,7 +145,7 @@ const NavBar: React.FC<HeaderProps> = ({ groups, active, toggleNav }) => {
             Deskers
           </a>
           <button type="button" className="headC" onClick={toggleNav}>
-            <FontAwesomeIcon icon={faBars} title="MENU" />
+            <FontAwesomeIcon icon={faBars} title="MENU" titleId='menu-title-id'/>
           </button>
         </div>
         <StyledNavWrapper active={active ? 'active' : undefined}>
