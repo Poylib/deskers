@@ -3,15 +3,13 @@ import Link from 'next/link';
 
 // import { Post } from '@/lib/_config/types';
 import { CalendarDays, Clock3 } from 'lucide-react';
-import { Post } from '../../../data/model/type';
+import { Post } from '../../data/model/type';
 
 interface Props {
   post: Post;
 }
 
 const PostCard = ({ post }: Props) => {
-  // console.log(post.uri)
-
   const firstLetter = post.category.charAt(0);
   const firstLetterCap = firstLetter.toUpperCase();
   const remainingLetters = post.category.slice(1);
@@ -25,7 +23,7 @@ const PostCard = ({ post }: Props) => {
           <Image
             src={post.thumbnail}
             alt={`thumbnail for ${post.title}`}
-            sizes="(max-width: 1000px) 50vw, 450px"
+            sizes="(max-width: 000px) 50vw, 450px"
             fill
             priority
             style={{

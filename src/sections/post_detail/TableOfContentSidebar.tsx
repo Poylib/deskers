@@ -3,10 +3,10 @@
 import Link from 'next/link';
 
 import { cn } from '@/lib/utils';
-import { HeadingItem } from '../../../_config/types';
-import { useHeadingsObserver } from '../../../hook/useHeadingsObserver';
-import { ScrollToComment, ScrollTop } from '../../../components/TocButtons';
-import CopyLinkButton from '../../../components/CopyLinkButton';
+import { HeadingItem } from '../../config/types';
+import { useHeadingsObserver } from '../../hook/useHeadingsObserver';
+import { ScrollToComment, ScrollTop } from '../../components/TocButtons';
+import CopyLinkButton from '../../components/CopyLinkButton';
 
 interface Props {
   toc: HeadingItem[];

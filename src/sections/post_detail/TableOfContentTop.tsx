@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 import { cn } from '@/lib/utils';
-import { HeadingItem } from '../../../_config/types';
+import { HeadingItem } from '../../config/types';
 
 interface Props {
   toc: HeadingItem[];
