@@ -81,7 +81,9 @@ summary,
 time,
 mark,
 audio,
-video {
+video,
+ul,
+li {
   margin: 0;
   padding: 0;
   border: 0;
@@ -89,6 +91,10 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
+ul,li{
+  list-style-type : none
+}
+
 /* HTML5 display-role reset for older browsers */
 article,
 aside,
