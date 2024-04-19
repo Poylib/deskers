@@ -8,6 +8,7 @@ import { ThemeProvider } from 'next-themes';
 import { Toaster } from '../sections/ui/toaster';
 import { Header } from '../layouts/Header';
 import { Footer } from '../layouts/Footer';
+import GoogleAnalytics from './lib/GoogleAnalytics';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -28,6 +29,9 @@ export const metadata: Metadata = {
     description: blogDesc,
     images: [blogThumbnailURL],
   },
+  verification: {
+    google: 'ODJ6Nm0nKj7tf47xBaqZd8wrUx1nOZJZUq2YwLikXHo',
+  },
 };
 
 export default function RootLayout({
@@ -38,6 +42,7 @@ export default function RootLayout({
   return (
     <html lang="ko" className="h-full scroll-my-20 scroll-smooth" suppressHydrationWarning>
       <body className={cn(inter.className, 'flex min-h-screen flex-col')}>
+        {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS ? <GoogleAnalytics ga_id={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} /> : null}
         <ThemeProvider>
           <Header />
           <main className="mt-[64px] flex flex-1 flex-col">{children}</main>
