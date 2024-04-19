@@ -1,7 +1,7 @@
 'use client';
 
 import { ArrowUpToLine, MessageSquareText } from 'lucide-react';
-import { Button } from '../sections/tail/ui/button';
+import { Button } from '../sections/ui/button';
 
 interface ButtonProps {
   size?: number;
