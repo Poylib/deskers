@@ -22,12 +22,12 @@ export default function About() {
       <section style={{ width: '50%' }}>
         <h2 style={{ marginTop: 24, fontSize: 24 }}>이제 편집자가 추천하는 분야 별 전문 데스커와 소통할 시간입니다. </h2>
         <p style={{ marginTop: 4 }}>더이상 혼자 고민하지말고, 관심 분야 전문가와 함께 도전과 성장의 여정을 떠나보세요.</p>
-        <p style={{ marginTop: 4, marginBottom: 24 }}>보다 나은 당신의 내일 위한 엄선된 고품질 콘텐츠를 성심성의껏 큐레이팅 해드립니다.</p>
+        <p style={{ marginTop: 4, marginBottom: 24 }}>보다 나은 당신의 내일을 위한 엄선된 고품질 콘텐츠를 성심성의껏 큐레이팅 해드립니다.</p>
 
         <div style={{ display: 'flex', alignItems: 'center', width: '100%' }}>
         <Link href="https://deskers.io">
           <p style={{ cursor: 'pointer', fontSize: '20px', color: 'blue' }}>
-           &gt; 지금 당장 직장 일잘러 꿀팁 구경하러 가기
+           &gt; 지금 바로 직장 일잘러 꿀팁 캐러가기
 
           </p>
         </Link>
