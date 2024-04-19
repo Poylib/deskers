@@ -1,13 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-import { Button } from '../sections/tail/ui/button';
+import { Button } from '../sections/ui/button';
 
-// import { Button } from '../ui/button';
-// import { useToast } from '../ui/use-toast';
-// import useWatchTimeout from '@/hook/useWatchTimeout';
 import { Check, Link, XCircle } from 'lucide-react';
-import { useToast } from '../sections/tail/ui/use-toast';
+import { useToast } from '../sections/ui/use-toast';
 import useWatchTimeout from '../hook/useWatchTimeout';
 
 interface ButtonProps {
