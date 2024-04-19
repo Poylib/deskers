@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!--  deskers.io sitemap.xml -->
+
+  <!--  main -->
+  <url>
+    <loc>https://deskers.io</loc>
+    <lastmod>2024-04-19T01:59:34.951Z</lastmod>
+    <changefreq>always</changefreq>
+    <priority>1</priority>
+  </url>
+
+  <!--  about -->
+  <url>
+    <loc>https://deskers.io/about</loc>
+    <lastmod>2024-04-19T01:59:34.951Z</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!--  category: office --> 
+  <!--  @TODO: 페이지에서 제거 된 경우, 해당 블록을 삭제한다. -->
+  <url>
+    <loc>https://deskers.io/office</loc>
+    <lastmod>2024-04-19T01:59:34.951Z</lastmod>
+    <changefreq>always</changefreq>
+    <!--  추후 콘텐츠 추가 시, 1로 상향 -->
+    <priority>0.2</priority>
+  </url>
+
+  <!--  category: life -->
+  <!--  @TODO: 페이지에서 제거 된 경우, 해당 블록을 삭제한다. -->
+  <url>
+    <loc>https://deskers.io/life</loc>
+    <lastmod>2024-04-19T01:59:34.951Z</lastmod>
+    <changefreq>always</changefreq>
+    <!--  추후 콘텐츠 추가 시, 1로 상향 -->
+    <priority>0.2</priority>
+  </url>
+
+  <!--  category: deskterior -->
+  <url>
+    <loc>https://deskers.io/deskterior</loc>
+    <lastmod>2024-04-19T01:59:34.951Z</lastmod>
+    <changefreq>always</changefreq>
+    <!--  추후 콘텐츠 추가 시, 1로 상향 -->
+    <priority>0.2</priority>
+  </url>
+
+  <!--  category: content seo -->
+  <url>
+    <loc>https://deskers.io/deskterior</loc>
+    <lastmod>2024-04-19T01:59:34.951Z</lastmod>
+    <changefreq>always</changefreq>
+    <priority>1</priority>
+  </url>
+</urlset>
