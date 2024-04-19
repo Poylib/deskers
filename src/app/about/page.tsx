@@ -5,7 +5,7 @@ export default function About() {
   const router = useRouter();
   return (
     <article style={{ marginTop: '120px', width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-      <section style={{ width: '50%' }}>
+      <section style={{ margin: '0 auto', padding: 24 }}>
         <h1 style={{ fontSize: 40, fontWeight: 'bold' }}>책상 위 평범한 삶, 그 이상의 가치를 함께 추구합니다. 데스커스 🌼 </h1>
 
         <p style={{ marginTop: 4 }}>매일 도전과 성장하는 직장인들을 위한 워크&라이프 스타일 블로그입니다. </p>
