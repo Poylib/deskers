@@ -24,11 +24,12 @@ const CategoryList = ({
   const router = useRouter();
 
   const onCategoryChange = (value: string) => {
-    if (value === 'all') {
-      router.push('/tail');
-    } else {
-      router.push(`/tail/${value}`);
-    }
+    router.push(value === "all" ? "/" : `?category=${value}`)
+    // if (value === 'all') {
+    //   router.push('/tail');
+    // } else {
+    //   router.push(`/tail/${value}`);
+    // }
   };
   return (
     <>
