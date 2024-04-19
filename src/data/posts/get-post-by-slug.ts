@@ -4,8 +4,8 @@ import matter from 'gray-matter';
 import readingTime from 'reading-time';
 import dayjs from 'dayjs';
 import { Post, PostMatter } from '../model/type';
-import { POSTS_PATH, POST_EXT } from '@/config';
 import showdown from 'showdown';
+import { POSTS_PATH, POST_EXT } from '../config';
 
 export const getPostBySlug = async ({ group, slug }: { group: string; slug: string }): Promise<Post> => {
   const filepath = path.join(POSTS_PATH, group, slug) + POST_EXT;

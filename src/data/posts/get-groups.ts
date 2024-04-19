@@ -2,7 +2,7 @@ import { sync } from 'glob';
 import path from 'path';
 import fs from 'fs';
 import { Group } from '../model/type';
-import { POSTS_PATH } from '@/config';
+import { POSTS_PATH } from '../config';
 
 export function getGroups(): Group[] {
   return sync('posts/*', { absolute: false })
