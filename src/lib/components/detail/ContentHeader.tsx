@@ -4,6 +4,9 @@ import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import { Post } from '@/data/model/type';
 import styled from 'styled-components';
 
+// @TODO: 추후 별도 파일로 분리
+const isDev =  process.env.NODE_ENV === 'development';
+
 export default function ContentHeader({ post }: { post: Post }) {
   return (
     <StyledRootDiv>
@@ -13,7 +16,7 @@ export default function ContentHeader({ post }: { post: Post }) {
         <CalendarTodayIcon sx={{ fontSize: 20 }} />
         <span>{post.dateString}</span>
       </div>
-      <span>읽는 시간 {post.readingMinutes} 분</span>
+      {isDev && <span>읽는 시간 {post.readingMinutes} 분</span>}
     </StyledRootDiv>
   );
 }
