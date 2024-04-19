@@ -25,11 +25,6 @@ const CategoryList = ({
 
   const onCategoryChange = (value: string) => {
     router.push(value === "all" ? "/" : `?category=${value}`)
-    // if (value === 'all') {
-    //   router.push('/tail');
-    // } else {
-    //   router.push(`/tail/${value}`);
-    // }
   };
   return (
     <>

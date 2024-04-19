@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
-import { baseDomain, blogDesc, blogName, blogThumbnailURL } from '../config/const';
+import { BASE_DOMAIN, BLOG_DESC, BLOG_NAME, BLOG_THUMBNAIL } from '../config/const';
 import '@/lib/config/globals.css';
 import { cn } from '@/lib/utils';
 import { ThemeProvider } from 'next-themes';
@@ -13,24 +13,21 @@ import GoogleAnalytics from './lib/GoogleAnalytics';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(baseDomain),
-  title: blogName,
-  description: blogDesc,
+  metadataBase: new URL(BASE_DOMAIN),
+  title: BLOG_NAME,
+  description: BLOG_DESC,
   openGraph: {
-    title: blogName,
-    description: blogDesc,
-    siteName: blogName,
-    images: [blogThumbnailURL],
+    title: BLOG_NAME,
+    description: BLOG_DESC,
+    siteName: BLOG_NAME,
+    images: [BLOG_THUMBNAIL],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: blogName,
-    description: blogDesc,
-    images: [blogThumbnailURL],
-  },
-  verification: {
-    google: 'ODJ6Nm0nKj7tf47xBaqZd8wrUx1nOZJZUq2YwLikXHo',
+    title: BLOG_NAME,
+    description: BLOG_DESC,
+    images: [BLOG_THUMBNAIL],
   },
 };
 
