@@ -1,6 +1,6 @@
-export const baseDomain = 'https://www.d5br5.dev';
+export const baseDomain = 'https://deskers.io';
 
-export const blogName = '김도형 개발 블로그';
-export const blogDesc = '개발 지식과 경험을 공유합니다.';
+export const blogName = '데스커스';
+export const blogDesc = '매일 도전과 성장하는 직장인들을 위한 워크&라이프 스타일 블로그입니다. ';
 
 export const blogThumbnailURL = `${baseDomain}/blog_thumbnail.png`;
