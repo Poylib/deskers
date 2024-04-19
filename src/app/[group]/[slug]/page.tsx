@@ -1,21 +1,14 @@
-import Content from '@/lib/components/detail/Content';
-import ContentHeader from '@/lib/components/detail/ContentHeader';
-import { getPostBySlug } from '@/data/posts';
-import Thumbnail from '@/lib/components/detail/Thumbnail';
-import Container from '@/core/layout/Container';
-import BreadCrumbs from '@/lib/components/breadcrumbs/BreadCrumbs';
-
+import { getPostBySlug } from '../../../data/posts';
+import { PostBody } from '../../../sections/post_detail/PostBody';
+import { PostHeader } from '../../../sections/post_detail/PostHeader';
 const Page = async ({ params }: any) => {
   const { group, slug } = params;
-
   const post = await getPostBySlug({ group, slug });
   return (
-    <Container>
-      <BreadCrumbs group={group} slug={slug}/>
-      <Thumbnail img={post.thumbnail} />
-      <ContentHeader post={post} />
-      <Content post={post} />
-    </Container>
+    <div className="prose mx-auto w-full max-w-[750px] px-4 dark:prose-invert">
+      <PostHeader post={post as any} />
+      <PostBody post={post as any} />
+    </div>
   );
 };
 

@@ -1,18 +1,33 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import Providers from './Providers';
-import { Header } from '@/lib/components/navigation/Header';
-import { getGroups } from '@/data/posts';
+
+import { baseDomain, blogDesc, blogName, blogThumbnailURL } from '../config/const';
+import '@/lib/config/globals.css';
+import { cn } from '@/lib/utils';
+import { ThemeProvider } from 'next-themes';
+import { Toaster } from '../sections/ui/toaster';
+import { Header } from '../layouts/Header';
+import { Footer } from '../layouts/Footer';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'deskers',
-  description: '현대인의 무대 위, 책상에서의 도전하고 성장하는 사람들의 워크 & 라이프 스타일 블로그, Deskers',
-  verification: {
-    google: 'ODJ6Nm0nKj7tf47xBaqZd8wrUx1nOZJZUq2YwLikXHo',
+  metadataBase: new URL(baseDomain),
+  title: blogName,
+  description: blogDesc,
+  openGraph: {
+    title: blogName,
+    description: blogDesc,
+    siteName: blogName,
+    images: [blogThumbnailURL],
+    type: 'website',
   },
-  robots: 'noindex,nofollow',
+  twitter: {
+    card: 'summary_large_image',
+    title: blogName,
+    description: blogDesc,
+    images: [blogThumbnailURL],
+  },
 };
 
 export default function RootLayout({
@@ -20,15 +35,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const groups = getGroups();
-
   return (
-    <html lang="ko">
-      <body className={inter.className}>
-        <Providers>
-          <Header groups={groups} />
-          {children}
-        </Providers>
+    <html lang='en' className='h-full scroll-my-20 scroll-smooth' suppressHydrationWarning>
+      <body className={cn(inter.className, 'flex min-h-screen flex-col')}>
+        <ThemeProvider>
+          <Header />
+          <main className='mt-[64px] flex flex-1 flex-col'>{children}</main>
+          <Footer />
+        </ThemeProvider>
+        <Toaster />
       </body>
     </html>
   );

@@ -1,24 +1,19 @@
 import React from 'react';
-
-import { getPosts } from '@/data/posts';
-import Title from '@/lib/components/group/list/Title';
-import ContentList from '@/lib/components/group/list/ContentList';
-import { Group } from '@/data/model/type';
-import { getGroups } from '@/data/posts/get-groups';
-import Container from '@/core/layout/Container';
+import { getGroups, getPosts } from '../../data/posts';
+import { Group } from '../../data/model/type';
+import PostListSection from '../../sections/PostListSection';
+import { getHashTags } from '../../data/posts/get-all-hash-tags';
 
 export default async function Category({ params, searchParams }: any) {
   const { group: _group } = params;
+  const { category } = searchParams;
   const group = getGroups().find((group) => group.category.includes(_group))! as Group;
-
   const posts = await getPosts({
     group: group.category,
     category: searchParams.category,
   });
-  return (
-    <Container>
-      <Title group={group} />
-      <ContentList posts={posts} />
-    </Container>
-  );
+  const hashTags = getHashTags({
+    group: group.category,
+  });
+  return <PostListSection posts={posts} hashTags={hashTags} category={category} group={_group}/>;
 }
