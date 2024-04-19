@@ -1,4 +1,5 @@
 import { Post } from '../data/model/type';
+import { cn } from '../utils';
 import CategoryList from './post_list/CategoryList';
 import PostCard from './post_list/PostCard';
 
@@ -28,7 +29,7 @@ const PostListPage = async ({
         currentCategory={category}
       />
       <section>
-        <ul className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:gap-12">
+        <ul className={cn(`grid grid-cols-1 gap-8 lg:gap-12`, posts.length >= 2 ? 'md:grid-cols-2' : 'md:grid-cols-1')}>
           {posts.map((post) => (
             <PostCard key={post.uri + post.date} post={post as any} />
           ))}
