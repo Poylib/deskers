@@ -1,18 +1,12 @@
-import Container from '@/core/layout/Container';
-import Featured from '@/lib/components/main/Featured';
-import Tags from '@/lib/components/main/Tags';
+import { getPosts } from '../data/posts';
+import { getHashTags } from '../data/posts/get-all-hash-tags';
+import PostListPage from '../sections/PostListSection';
 
-export default function Home() {
-  return (
-    <Container>
-      <div>
-        <h2>Deskers.</h2>
-        <p>책상 위 평범한 삶, 그 이상의 가치를 함께 추구합니다.</p>
-      </div>
-      <div>
-        <Featured />
-        <Tags />
-      </div>
-    </Container>
-  );
-}
+const Home = async ({ searchParams }: any) => {
+  const { category } = searchParams;
+  const posts = await getPosts({ category });
+  const hashTags = getHashTags();
+  return <PostListPage posts={posts} hashTags={hashTags} category={category} />;
+};
+
+export default Home;
