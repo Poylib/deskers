@@ -25,9 +25,11 @@ export default function About() {
         <p style={{ marginTop: 4, marginBottom: 24 }}>보다 나은 당신의 내일 응원하는 엄선된 고품질 콘텐츠를 데스커스가 지원합니다.</p>
 
         <div style={{ display: 'flex', alignItems: 'center', width: '100%' }}>
-          <Link id="link" href="/about" style={{ fontSize: 20, color: 'blue' }}>
-              &gt; 지금 당장 전문 직장 일잘러 꿀팁 구경하러 가기
-          </Link>
+        <Link href="https://deskers.io">
+          <p style={{ cursor: 'pointer', fontSize: '20px', color: 'blue' }}>
+            &gt; 지금 당장 전문 직장 일잘러 꿀팁 구경하러 가기
+          </p>
+        </Link>
         </div>
       </section>
     </article>
