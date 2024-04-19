@@ -1,8 +1,7 @@
 'use client';
-import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 export default function About() {
-  const router = useRouter();
   return (
     <article style={{ marginTop: '120px', width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection:'column' }}>
       <section style={{ width: '50%' }}>
@@ -26,9 +25,9 @@ export default function About() {
         <p style={{ marginTop: 4, marginBottom: 24 }}>보다 나은 당신의 내일 응원하는 엄선된 고품질 콘텐츠를 데스커스가 지원합니다.</p>
 
         <div style={{ display: 'flex', alignItems: 'center', width: '100%' }}>
-          <a onClick={() => router.push('/')} style={{ fontSize: 20, color: 'blue' }}>
-            &gt; 지금 당장 전문 직장 일잘러 꿀팁 구경하러 가기
-          </a>
+          <Link id="link" href="/about" style={{ fontSize: 20, color: 'blue' }}>
+              &gt; 지금 당장 전문 직장 일잘러 꿀팁 구경하러 가기
+          </Link>
         </div>
       </section>
     </article>
