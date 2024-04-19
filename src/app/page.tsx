@@ -1,5 +1,5 @@
 import { getPosts } from '../data/posts';
-import { getHashTags } from '../data/posts/get-all-hash-tags';
+import { getHashTags } from '../data/posts/get-hash-tags';
 import PostListPage from '../sections/PostListSection';
 
 const Home = async ({ searchParams }: any) => {

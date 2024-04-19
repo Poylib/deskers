@@ -7,6 +7,5 @@ export const getSitemapPostList = async () => {
     lastModified: new Date(),
     url: `${baseUrl}${uri}`,
   }));
-  console.log(sitemapPostList)
   return sitemapPostList;
 };

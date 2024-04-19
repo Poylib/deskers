@@ -2,7 +2,7 @@ import React from 'react';
 import { getGroups, getPosts } from '../../data/posts';
 import { Group } from '../../data/model/type';
 import PostListSection from '../../sections/PostListSection';
-import { getHashTags } from '../../data/posts/get-all-hash-tags';
+import { getHashTags } from '../../data/posts/get-hash-tags';
 
 export default async function Category({ params, searchParams }: any) {
   const { group: _group } = params;
