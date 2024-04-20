@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useSpyElem } from '../hook/useSpy';
 import ThemeSwitch from './theme/Switch';
 import ScrollProgressBar from '../components/ScrollProgressBar';
+import MobileNav from '../sections/MobileNav';
 
 export const Header = () => {
   const { ref, marginTop } = useSpyElem(65);
@@ -20,6 +21,7 @@ export const Header = () => {
             <Link href="/about">ABOUT</Link>
           </div>
           <ThemeSwitch />
+          <MobileNav />
         </div>
       </div>
       <ScrollProgressBar />

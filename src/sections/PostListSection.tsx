@@ -21,7 +21,7 @@ const PostListPage = ({
     count: number;
   }[];
 }) => {
-  const isPageWide = useMediaQuery('(min-width: 768px)');
+  const isPageWide = useMediaQuery('(min-width: 640px)');
 
   return (
     <>
