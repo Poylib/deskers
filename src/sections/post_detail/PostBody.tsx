@@ -7,6 +7,7 @@ import remarkBreaks from 'remark-breaks';
 import remarkGfm from 'remark-gfm';
 import { MdxComponents } from '../../components/mdx';
 import { Post } from '../../data/model/type';
+import { Converter } from 'showdown';
 
 interface Props {
   post: Post;
@@ -14,28 +15,30 @@ interface Props {
 
 export const PostBody = ({ post }: Props) => {
   return (
-    <MDXRemote
-      source={post.content}
-      options={{
-        mdxOptions: {
-          remarkPlugins: [
-            remarkGfm,
-            remarkA11yEmoji,
-            remarkBreaks,
-          ],
-          rehypePlugins: [
-            [
-              // @ts-ignore
-              rehypePrettyCode,
-              {
-                theme: { dark: 'github-dark-dimmed', light: 'github-light' },
-              },
-            ],
-            rehypeSlug,
-          ],
-        },
-      }}
-      components={MdxComponents}
-    />
+    <div dangerouslySetInnerHTML={{ __html: new Converter().makeHtml(post.content) }} />
+    // <>{new Converter().makeHtml(post.content)}</>
+    // <MDXRemote
+    //   source={post.content}
+    //   options={{
+    //     mdxOptions: {
+    //       remarkPlugins: [
+    //         remarkGfm,
+    //         remarkA11yEmoji,
+    //         remarkBreaks,
+    //       ],
+    //       rehypePlugins: [
+    //         [
+    //           // @ts-ignore
+    //           rehypePrettyCode,
+    //           {
+    //             theme: { dark: 'github-dark-dimmed', light: 'github-light' },
+    //           },
+    //         ],
+    //         rehypeSlug,
+    //       ],
+    //     },
+    //   }}
+    //   components={MdxComponents}
+    // />
   );
 };

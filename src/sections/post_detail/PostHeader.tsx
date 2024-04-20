@@ -1,3 +1,4 @@
+'use client'
 import Link from 'next/link';
 
 import { CalendarDays, Clock3, Eye } from 'lucide-react';
