@@ -29,6 +29,9 @@ export const metadata: Metadata = {
     description: BLOG_DESC,
     images: [BLOG_THUMBNAIL],
   },
+  verification: {
+    google: 'ODJ6Nm0nKj7tf47xBaqZd8wrUx1nOZJZUq2YwLikXHo',
+  },
 };
 
 export default function RootLayout({
