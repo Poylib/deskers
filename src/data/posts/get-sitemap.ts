@@ -1,6 +1,11 @@
-import { getPosts } from "./get-posts";
+import { getPosts } from './get-posts';
 
-export const getSitemapPostList = async () => {
+export async function getSitemapPostList(): Promise<
+  {
+    lastModified: Date;
+    url: string;
+  }[]
+> {
   const posts = await getPosts();
   const baseUrl = 'https:/deskers.io';
   const sitemapPostList = posts.map(({ uri }) => ({
@@ -8,4 +13,4 @@ export const getSitemapPostList = async () => {
     url: `${baseUrl}${uri}`,
   }));
   return sitemapPostList;
-};
+}

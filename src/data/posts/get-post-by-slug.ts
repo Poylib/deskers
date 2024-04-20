@@ -7,7 +7,7 @@ import { Post, PostMatter } from '../model/type';
 import showdown from 'showdown';
 import { POSTS_PATH, POST_EXT } from '../config';
 
-export const getPostBySlug = async ({ group, slug }: { group: string; slug: string }): Promise<Post> => {
+export async function getPostBySlug({ group, slug }: { group: string; slug: string }): Promise<Post> {
   const filepath = path.join(POSTS_PATH, group, slug) + POST_EXT;
   const mdx = matter(fs.readFileSync(filepath, 'utf8'));
   const grayMatter = mdx.data as PostMatter & { category: string };
@@ -18,4 +18,4 @@ export const getPostBySlug = async ({ group, slug }: { group: string; slug: stri
     readingMinutes: Math.ceil(readingTime(mdx.content).minutes),
     uri: path.relative(process.cwd(), filepath),
   };
-};
+}

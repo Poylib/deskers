@@ -5,7 +5,7 @@ import readingTime from 'reading-time';
 import dayjs from 'dayjs';
 import { Post, PostMatter } from '../model/type';
 
-export const getPost = async (filepath: string): Promise<Post> => {
+export async function getPost(filepath: string): Promise<Post> {
   const mdx = matter(fs.readFileSync(filepath, 'utf8'));
   const grayMatter = mdx.data as PostMatter & { category: string };
   const parsed = path.parse(filepath);
@@ -16,4 +16,4 @@ export const getPost = async (filepath: string): Promise<Post> => {
     readingMinutes: Math.ceil(readingTime(mdx.content).minutes),
     uri: path.relative(process.cwd(), path.join(parsed.dir.replace('posts/', ''), parsed.name)),
   };
-};
+}

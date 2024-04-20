@@ -1,6 +1,6 @@
 import { sync } from 'glob';
 import { POSTS_PATH } from '../config';
 
-export const getPaths = (group?: string) => {
+export function getPaths(group?: string): string[] {
   return sync(`${POSTS_PATH}/${group || '**'}/**/*.mdx`);
-};
+}
