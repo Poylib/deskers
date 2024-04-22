@@ -3,8 +3,6 @@
 import { useRouter } from 'next/navigation';
 
 import { CategoryButton } from './CategoryButton';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../ui/select';
-import { group } from 'console';
 
 interface CategoryListProps {
   categoryList: {
@@ -17,20 +15,24 @@ interface CategoryListProps {
   group?: string;
 }
 
-const CategoryList = ({ 
-  categoryList, allPostCount, currentCategory = 'all' ,
-  group,
-}: CategoryListProps) => {
+const CategoryList = ({ categoryList, allPostCount, currentCategory = 'all', group }: CategoryListProps) => {
   const router = useRouter();
 
-  const onCategoryChange = (value: string) => {
-    router.push(value === "all" ? "/" : `?category=${value}`)
+  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const { value } = event.target;
+    router.push(value === 'all' ? '/' : `?category=${value}`);
   };
+
   return (
     <>
       <section className="mb-10 hidden sm:block">
         <ul className="flex gap-3">
-          <CategoryButton href={ group === undefined ? "/": `/${group}` } isCurrent={currentCategory === 'all'} displayName="All" count={allPostCount} />
+          <CategoryButton
+            href={group === undefined ? '/' : `/${group}`}
+            isCurrent={currentCategory === 'all'}
+            displayName="All"
+            count={allPostCount}
+          />
           {categoryList.map((cg) => {
             const firstLetter = cg.publicName.charAt(0);
             const firstLetterCap = firstLetter.toUpperCase();
@@ -49,19 +51,23 @@ const CategoryList = ({
         </ul>
       </section>
       <section className="mb-10 sm:hidden">
-        <Select onValueChange={onCategoryChange} defaultValue={currentCategory}>
-          <SelectTrigger className="w-[180px]">
-            <SelectValue placeholder="Theme" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="all">All ({allPostCount})</SelectItem>
-            {categoryList.map((cg) => (
-              <SelectItem key={cg.dirName} value={cg.dirName}>
+        <label htmlFor="countries" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"></label>
+        <select
+          id="countries"
+          onChange={handleChange}
+          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        >
+          <option value={'all'} className="p-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            all ({categoryList.map((c) => c.count)})
+          </option>
+          {categoryList.map((cg, idx) => {
+            return (
+              <option value={cg.dirName} className="p-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" key={idx}>
                 {cg.publicName} ({cg.count})
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
+              </option>
+            );
+          })}
+        </select>
       </section>
     </>
   );
