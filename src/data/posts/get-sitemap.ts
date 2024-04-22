@@ -10,7 +10,7 @@ export async function getSitemapPostList(): Promise<
   const baseUrl = 'https:/deskers.io';
   const sitemapPostList = posts.map(({ uri }) => ({
     lastModified: new Date(),
-    url: `${baseUrl}${uri}`,
+    url: `${baseUrl}/${uri}`,
   }));
   return sitemapPostList;
 }
