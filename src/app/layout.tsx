@@ -9,6 +9,7 @@ import { Toaster } from '../sections/ui/toaster';
 import { Header } from '../layouts/Header';
 import { Footer } from '../layouts/Footer';
 import GoogleAnalytics from './lib/GoogleAnalytics';
+import MicrosoftClarity from './lib/MicrosoftClarity';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -42,7 +43,12 @@ export default function RootLayout({
   return (
     <html lang="ko" className="h-full scroll-my-20 scroll-smooth" suppressHydrationWarning>
       <body className={cn(inter.className, 'flex min-h-screen flex-col')}>
-        {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS ? <GoogleAnalytics ga_id={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} /> : null}
+        {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS ? (
+          <>
+            <GoogleAnalytics ga_id={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />
+            <MicrosoftClarity />
+          </>
+        ) : null}
         <ThemeProvider>
           <Header />
           <main className="mt-[64px] flex flex-1 flex-col">{children}</main>
