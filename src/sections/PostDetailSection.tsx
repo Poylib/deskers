@@ -15,7 +15,7 @@ export function PostDetailSection({ group, slug, post }: {
     <div>
       <div className="prose mx-auto w-full max-w-[650px] px-4 dark:prose-invert">
         <Thumbnail img={post.thumbnail} />
-        <BreadCrumbs group={group!} slug={slug!} />
+        <BreadCrumbs group={group!} title={post?.title} />
         <PostHeader post={post as any} />
         <TocTop toc={post.toc} />
         <article className="relative">
