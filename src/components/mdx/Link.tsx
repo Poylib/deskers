@@ -5,10 +5,11 @@ import { LinkProps } from 'next/link';
 export const ExternalLink = ({ children, href, ...props }: PropsWithChildren<LinkProps>) => {
   return (
     <a
+      rel="nofollow"
       {...props}
-      target='_blank'
+      target="_blank"
       href={href.toString() || ''}
-      className='break-words text-pink-600 no-underline underline-offset-4 hover:underline'
+      className="break-words text-pink-600 no-underline underline-offset-4 hover:underline"
     >
       {children}
     </a>

@@ -7,38 +7,36 @@ import remarkBreaks from 'remark-breaks';
 import remarkGfm from 'remark-gfm';
 import { MdxComponents } from '../../components/mdx';
 import { Post } from '../../data/model/type';
-import { Converter } from 'showdown';
+import { serialize } from 'next-mdx-remote/serialize';
 
 interface Props {
   post: Post;
 }
 
-export const PostBody = ({ post }: Props) => {
+export const PostBody = async({ post }: Props) => {
   return (
-    <div dangerouslySetInnerHTML={{ __html: new Converter().makeHtml(post.content) }} />
-    // <>{new Converter().makeHtml(post.content)}</>
-    // <MDXRemote
-    //   source={post.content}
-    //   options={{
-    //     mdxOptions: {
-    //       remarkPlugins: [
-    //         remarkGfm,
-    //         remarkA11yEmoji,
-    //         remarkBreaks,
-    //       ],
-    //       rehypePlugins: [
-    //         [
-    //           // @ts-ignore
-    //           rehypePrettyCode,
-    //           {
-    //             theme: { dark: 'github-dark-dimmed', light: 'github-light' },
-    //           },
-    //         ],
-    //         rehypeSlug,
-    //       ],
-    //     },
-    //   }}
-    //   components={MdxComponents}
-    // />
+     <MDXRemote
+       source={post.content}
+       options={{
+         mdxOptions: {
+           remarkPlugins: [
+             remarkGfm,
+             remarkA11yEmoji,
+             remarkBreaks,
+           ],
+           rehypePlugins: [
+             [
+               // @ts-ignore
+               rehypePrettyCode,
+               {
+                 theme: { dark: 'github-dark-dimmed', light: 'github-light' },
+               },
+             ],
+             rehypeSlug,
+           ],
+         },
+       }}
+       components={MdxComponents}
+     />
   );
 };

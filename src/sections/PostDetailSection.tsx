@@ -1,4 +1,3 @@
-'use client';
 import { Post } from '../data/model/type';
 import BreadCrumbs from './post_detail/BreadCrumbs';
 import { PostBody } from './post_detail/PostBody';
