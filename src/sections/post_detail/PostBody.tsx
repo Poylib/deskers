@@ -7,7 +7,6 @@ import remarkBreaks from 'remark-breaks';
 import remarkGfm from 'remark-gfm';
 import { MdxComponents } from '../../components/mdx';
 import { Post } from '../../data/model/type';
-import { serialize } from 'next-mdx-remote/serialize';
 
 interface Props {
   post: Post;

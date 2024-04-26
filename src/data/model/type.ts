@@ -1,3 +1,5 @@
+import { HeadingItem } from "../../config/types";
+
 export type Group = {
   category: string;
   displayName: string;
@@ -22,4 +24,5 @@ export interface Post extends PostMatter {
   content: string;
   uri: string;
   readingMinutes: number;
+  toc: HeadingItem[]
 }
