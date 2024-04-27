@@ -8,6 +8,8 @@ import remarkGfm from 'remark-gfm';
 import { MdxComponents } from '../../components/mdx';
 import { Post } from '../../data/model/type';
 
+// import styles from './PostBody.module.scss';
+
 interface Props {
   post: Post;
 }
